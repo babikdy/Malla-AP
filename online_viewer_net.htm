@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Gestión y Políticas Públicas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #fbe4ff, #ffe3f1);
+      margin: 0;
+      padding: 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      text-align: center;
+      color: #6a0dad;
+      margin-bottom: 40px;
+      background: linear-gradient(to right, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .semestre {
+      margin: 40px 0;
+      border-left: 4px solid #d36fa0;
+      padding-left: 20px;
+    }
+    .semestre h2 {
+      background: linear-gradient(to right, #f3c4fb, #fbcfe8);
+      color: #4b0082;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1.4em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .curso {
+      display: inline-block;
+      background-color: #e0e0e0;
+      color: #4b0082;
+      border: 2px solid #aaa;
+      border-radius: 15px;
+      padding: 15px 20px;
+      margin: 10px;
+      min-width: 220px;
+      text-align: center;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.08);
+    }
+    .curso:hover {
+      transform: scale(1.05);
+    }
+    .curso.disponible {
+      background: linear-gradient(to top left, #fbe4ff, #fbcfe8);
+      border-color: #d36fa0;
+    }
+    .curso.completado {
+      background: linear-gradient(to top left, #d1fae5, #a7f3d0);
+      border-color: #58a96c;
+      color: #25603f;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Curricular: Gestión y Políticas Públicas</h1>
+
+  <div class="semestre">
+    <h2>1° Semestre</h2>
+    <div class="curso disponible" id="MAT1000">MAT1000 - Precálculo (10 cr.)</div>
+    <div class="curso disponible" id="EYP1010">EYP1010 - Introducción a la Microeconomía (10 cr.)</div>
+    <div class="curso disponible" id="ADP001G">ADP001G - Fundamentos de Gestión Pública (10 cr.)</div>
+    <div class="curso disponible" id="ICP0101">ICP0101 - Introducción a la Ciencia Política (10 cr.)</div>
+    <div class="curso disponible" id="FIL2001">FIL2001 - Filosofía ¿para qué? (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>2° Semestre</h2>
+    <div class="curso" id="MAT1100" data-prereq="MAT1000">MAT1100 - Cálculo (10 cr.)</div>
+    <div class="curso disponible" id="ADP002G">ADP002G - Comportamiento Organizacional (10 cr.)</div>
+    <div class="curso disponible" id="ICP0103">ICP0103 - Introducción al Derecho (10 cr.)</div>
+    <div class="curso disponible" id="EAE1110">EAE1110 - Macroeconomía (10 cr.)</div>
+    <div class="curso disponible">Formación General (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>3° Semestre</h2>
+    <div class="curso">ADP003G - Justicia y Bien Común (10 cr.)</div>
+    <div class="curso">ADP001D - Evidencia para la Gestión Pública (10 cr.)</div>
+    <div class="curso" data-prereq="MAT1100">ADP001E - Probabilidad y Estadística (10 cr.)</div>
+    <div class="curso">Formación General (10 cr.)</div>
+    <div class="curso">Formación General (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>4° Semestre</h2>
+    <div class="curso">ADP002D - Contabilidad (10 cr.)</div>
+    <div class="curso">ADP002E - Introducción a las Políticas Públicas (10 cr.)</div>
+    <div class="curso">ADP001S - Examen de Comunicación Escrita (10 cr.)</div>
+    <div class="curso">Formación General (10 cr.)</div>
+    <div class="curso">Formación General (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>5° Semestre</h2>
+    <div class="curso">ADP201G - Gestión Pública I (10 cr.)</div>
+    <div class="curso" data-prereq="ICP0101">ADP201D - Política en Gestión y Políticas Públicas (10 cr.)</div>
+    <div class="curso" data-prereq="ADP203I">ADP201C - Régimen Jurídico de la Administración del Estado (10 cr.)</div>
+    <div class="curso" data-prereq="ADP001E">ADP201I - Métodos Aplicados a Gestión Pública (10 cr.)</div>
+    <div class="curso">Formación General (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>6° Semestre</h2>
+    <div class="curso">ADP202G - Gestión Pública II (10 cr.)</div>
+    <div class="curso">ADP202I - Economía del Sector Público (10 cr.)</div>
+    <div class="curso">ADP203G - Introducción a la Política Comparada (10 cr.)</div>
+    <div class="curso">ADP203I - Instituciones y Garantías del Estado (10 cr.)</div>
+    <div class="curso">Formación Teológica (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>7° Semestre</h2>
+    <div class="curso" data-prereq="ADP201I">ADP301G - Evaluación de Programas Públicos (5 cr.)</div>
+    <div class="curso" data-prereq="EYP1010,EAE1110">ADP301E - Administración Financiera del Estado (10 cr.)</div>
+    <div class="curso" data-prereq="ADP001E">ADP302G - Operaciones de Servicios Públicos (5 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>8° Semestre</h2>
+    <div class="curso" data-prereq="ADP302G">ADP303G - Capstone: Gestión de Proyectos Públicos (10 cr.)</div>
+    <div class="curso">ADP304G - Ética y Políticas Públicas (5 cr.)</div>
+    <div class="curso">ADP305G - Habilidades Directivas (10 cr.)</div>
+    <div class="curso">MINOR (10 cr.)</div>
+    <div class="curso">MINOR (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>9° Semestre</h2>
+    <div class="curso">ADP306G - Auditoría Gubernamental (5 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+  </div>
+
+  <div class="semestre">
+    <h2>10° Semestre</h2>
+    <div class="curso" data-prereq="ADP303G">Práctica Profesional (10 cr.)</div>
+    <div class="curso">Entorno y Relación con el Medio (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Optativo de Profundización (10 cr.)</div>
+    <div class="curso">Ética Profesional (10 cr.)</div>
+  </div>
+
+  <script>
+    const cursos = document.querySelectorAll('.curso');
+
+    function cargarEstado() {
+      cursos.forEach(curso => {
+        const id = curso.id;
+        if (!id) return;
+        const estado = localStorage.getItem(id);
+        if (estado === 'completado') {
+          curso.classList.add('completado');
+          curso.classList.remove('disponible');
+        }
+      });
+      verificarDisponibles();
+    }
+
+    function guardarEstado(id, estado) {
+      localStorage.setItem(id, estado);
+    }
+
+    function verificarDisponibles() {
+      cursos.forEach(curso => {
+        const prereq = curso.getAttribute('data-prereq');
+        if (!curso.classList.contains('completado')) {
+          if (!prereq) {
+            curso.classList.add('disponible');
+          } else {
+            const cumplido = prereq.split(',').every(p => localStorage.getItem(p.trim()) === 'completado');
+            if (cumplido) {
+              curso.classList.add('disponible');
+            } else {
+              curso.classList.remove('disponible');
+            }
+          }
+        }
+      });
+    }
+
+    cursos.forEach(curso => {
+      curso.addEventListener('click', () => {
+        if (!curso.classList.contains('disponible') && !curso.classList.contains('completado')) return;
+        curso.classList.toggle('completado');
+        const id = curso.id;
+        if (!id) return;
+        if (curso.classList.contains('completado')) {
+          guardarEstado(id, 'completado');
+        } else {
+          guardarEstado(id, 'pendiente');
+        }
+        verificarDisponibles();
+      });
+    });
+
+    cargarEstado();
+  </script>
+</body>
+</html>
